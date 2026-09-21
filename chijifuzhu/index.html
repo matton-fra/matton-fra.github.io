@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="吃鸡辅助-专业游戏外挂技术与辅助工具评测指南。提供吃鸡辅助软件下载、使用教程、安全检测及防封号技巧分享。">
+    <meta name="keywords" content="吃鸡辅助,绝地求生辅助,游戏外挂,辅助工具,防封号,游戏攻略">
+    <title>吃鸡辅助-专业游戏辅助工具评测与下载指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #00ff88;
+            --primary-hover: #00cc6a;
+            --secondary-color: #1a1a2e;
+            --bg-color: #0f0f1a;
+            --card-bg: #161625;
+            --text-main: #ffffff;
+            --text-sub: #a0a0b0;
+            --accent-red: #ff4757;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 32px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            outline: none;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(22, 22, 37, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: var(--spacing-md) 0;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: var(--spacing-lg);
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            color: var(--text-sub);
+            font-weight: 500;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .header-actions .btn {
+            padding: 8px 20px;
+            border-radius: var(--radius-md);
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            margin-right: var(--spacing-sm);
+        }
+
+        .btn-outline:hover {
+            background: rgba(0, 255, 136, 0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            padding: 80px 0;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 255, 136, 0.08) 0%, transparent 60%);
+            z-index: -1;
+            animation: pulse 10s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-md);
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-sub);
+            max-width: 600px;
+            margin: 0 auto var(--spacing-lg);
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+        }
+
+        /* Warning Banner */
+        .warning-banner {
+            background: linear-gradient(90deg, rgba(255, 71, 87, 0.1), rgba(255, 71, 87, 0.05));
+            border-left: 4px solid var(--accent-red);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+
+        .warning-icon {
+            color: var(--accent-red);
+            font-size: 1.5rem;
+        }
+
+        .warning-text strong {
+            color: var(--accent-red);
+        }
+
+        /* Features Section */
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: var(--spacing-lg);
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-md);
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+            border-color: rgba(0, 255, 136, 0.2);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 255, 136, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .feature-card h3 {
+            margin-bottom: var(--spacing-sm);
+            font-size: 1.2rem;
+        }
+
+        .feature-card p {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+        }
+
+        /* Product Showcase */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 180px;
+            background-color: #222;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .product-card:hover .product-image img {
+            opacity: 1;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--accent-red);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        .product-content {
+            padding: var(--spacing-lg);
+        }
+
+        .product-title {
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .product-desc {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .product-features {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .product-features li {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+        }
+
+        .product-features li::before {
+            content: '✓';
+            color: var(--primary-color);
+            margin-right: 8px;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: var(--spacing-md);
+        }
+
+        .price {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .btn-block {
+            width: 100%;
+            padding: 12px;
+            background: var(--primary-color);
+            color: var(--secondary-color);
+            border: none;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-block:hover {
+            background: var(--primary-hover);
+        }
+
+        /* Guide Section */
+        .guide-layout {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: var(--spacing-lg);
+        }
+
+        .guide-nav {
+            background: var(--card-bg);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-lg);
+            height: fit-content;
+        }
+
+        .guide-nav li {
+            margin-bottom: 4px;
+        }
+
+        .guide-nav button {
+            width: 100%;
+            text-align: left;
+            padding: 12px;
+            background: transparent;
+            border: none;
+            color: var(--text-sub);
+            cursor: pointer;
+            border-radius: var(--radius-md);
+            transition: all 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .guide-nav button:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-main);
+        }
+
+        .guide-nav button.active {
+            background: rgba(0, 255, 136, 0.1);
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .guide-content article {
+            background: var(--card-bg);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--spacing-md);
+            display: none;
+        }
+
+        .guide-content article.active {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .guide-content h3 {
+            margin-bottom: var(--spacing-sm);
+            color: var(--primary-color);
+        }
+
+        .guide-content p {
+            color: var(--text-sub);
+            margin-bottom: var(--spacing-sm);
+            font-size: 0.95rem;
+        }
+
+        .guide-content code {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: var(--accent-red);
+        }
+
+        /* FAQ */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: var(--spacing-md);
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+        }
+
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+            padding-top: var(--spacing-sm);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a14;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .footer-col h4 {
+            color: var(--text-main);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            color: #555;
+            font-size: 0.85rem;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            nav {
+                display: none;
+            }
+
+            .guide-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .header-actions .btn {
+                display: none;
+            }
+
+            .header-actions .btn-outline {
+                display: block;
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                <span>ProAim</span>辅助
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#products">软件推荐</a></li>
+                    <li><a href="#guide">使用教程</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-outline">登录</button>
+                <button class="btn btn-primary">立即下载</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>提升胜率，<br>掌握<span>吃鸡辅助</span>的核心技术</h1>
+                <p>专为《绝地求生》及吃鸡类游戏打造的专业辅助工具，提供透视、自瞄、压枪等全方位功能，安全稳定，助你轻松上分。</p>
+                
+                <div class="warning-banner">
+                    <div class="warning-icon">⚠️</div>
+                    <div class="warning-text">
+                        <strong>重要提示：</strong> 使用辅助工具存在封号风险。本站提供技术交流与资源分享，请合理使用，保持账号安全。
+                    </div>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">99.8%</span>
+                        <span class="stat-label">在线稳定性</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">0.1ms</span>
+                        <span class="stat-label">低延迟延迟</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">技术支持</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">核心功能特性</h2>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>智能自瞄</h3>
+                        <p>采用先进的算法模型，锁定头部与身体，自动修正后坐力，精准打击敌人，操作流畅无延迟。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">👁️</div>
+                        <h3>战术透视</h3>
+                        <p>开启后可透视墙体、树木及掩体后的敌人位置，预判敌人动向，掌握战场主动权。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>防封检测</h3>
+                        <p>内置多重反检测机制，模拟真实玩家操作逻辑，有效规避官方检测，降低封号概率。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🎮</div>
+                        <h3>一键压枪</h3>
+                        <p>自动适配不同枪械的后坐力曲线，无需繁琐调整，新手也能轻松驾驭满配M416。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section class="section" id="products">
+            <div class="container">
+                <h2 class="section-title">热门辅助软件</h2>
+                <div class="product-grid">
+                    <!-- Product 1 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <span class="product-badge">热销</span>
+                            <img src="https://picsum.photos/seed/pubg1/400/250" alt="绝地求生辅助">
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">绝地求生 - 极光版</h3>
+                            <p class="product-desc">最新版本，功能全面，更新速度快，适合追求极限操作的高端玩家。</p>
+                            <ul class="product-features">
+                                <li>支持Win10/11系统</li>
+                                <li>支持所有主流地图</li>
+                                <li>内置语音辅助</li>
+                            </ul>
+                            <div class="product-footer">
+                                <span class="price">¥ 68.00</span>
+                                <button class="btn-block">立即购买</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Product 2 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <span class="product-badge" style="background: #2196F3;">新出</span>
+                            <img src="https://picsum.photos/seed/pubg2/400/250" alt="和平精英辅助">
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">和平精英 - 霓虹版</h3>
+                            <p class="product-desc">针对手游端优化，防检测能力极强，支持虚拟摇杆与触屏操作。</p>
+                            <ul class="product-features">
+                                <li>防封号技术升级</li>
+                                <li>支持触屏模拟</li>
+                                <li>自动压枪脚本</li>
+                            </ul>
+                            <div class="product-footer">
+                                <span class="price">¥ 88.00</span>
+                                <button class="btn-block">立即购买</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Product 3 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <span class="product-badge">免费</span>
+                            <img src="https://picsum.photos/seed/pubg3/400/250" alt="吃鸡辅助测试版">
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">吃鸡辅助 - 测试版</h3>
+                            <p class="product-desc">功能精简版，适合测试体验，包含基础透视与自瞄功能。</p>
+                            <ul class="product-features">
+                                <li>基础功能体验</li>
+                                <li>限时免费下载</li>
+                                <li>社区反馈通道</li>
+                            </ul>
+                            <div class="product-footer">
+                                <span class="price">免费</span>
+                                <button class="btn-block">免费下载</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section class="section" id="guide">
+            <div class="container">
+                <h2 class="section-title">使用指南与教程</h2>
+                <div class="guide-layout">
+                    <ul class="guide-nav">
+                        <li><button class="active" onclick="showGuide(event, 'install')">安装部署</button></li>
+                        <li><button onclick="showGuide(event, 'setup')">功能设置</button></li>
+                        <li><button onclick="showGuide(event, 'safety')">防封技巧</button></li>
+                        <li><button onclick="showGuide(event, 'faq')">常见报错</button></li>
+                    </ul>
+                    <div class="guide-content">
+                        <article id="install" class="active">
+                            <h3>安装部署流程</h3>
+                            <p>1. 下载最新版辅助压缩包并解压到本地文件夹。</p>
+                            <p>2. 关闭电脑上的杀毒软件与防火墙，防止误拦截。</p>
+                            <p>3. 以<strong>管理员身份</strong>运行启动程序。</p>
+                            <p>4. 等待连接服务器，看到“连接成功”提示后即可开启游戏。</p>
+                        </article>
+                        <article id="setup">
+                            <h3>功能参数设置</h3>
+                            <p>在设置面板中，你可以根据个人习惯调整灵敏度。建议开启“自动呼吸”功能以模拟真人操作节奏，避免生硬的移动。</p>
+                            <p><code>自瞄距离</code>建议设置为 500 米以内，<code>锁头优先</code>可设置为“始终”，确保优先击杀高威胁目标。</p>
+                        </article>
+                        <article id="safety">
+                            <h3>防封号安全建议</h3>
+                            <p>虽然我们采用了最新的反检测技术，但良好的游戏习惯依然重要。建议开启“随机化鼠标移动”选项，并定期更换游戏账号。</p>
+                            <p>不要在公共网络环境下使用辅助，尽量使用稳定的家庭宽带。</p>
+                        </article>
+                        <article id="faq">
+                            <h3>常见报错解决</h3>
+                            <p><strong>报错代码 1001：</strong> 网络连接失败，请检查网络或稍后重试。</p>
+                            <p><strong>报错代码 2002：</strong> 游戏版本过低，请更新游戏至最新版本。</p>
+                            <p><strong>报错代码 3001：</strong> 被检测到非法进程，请关闭后台占用内存的程序。</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section" id="faq">
+            <div class="container">
+                <h2 class="section-title">常见问题解答</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">辅助会占用多少电脑资源？<span>+</span></div>
+                        <div class="faq-answer">我们的辅助程序经过深度优化，资源占用极低，通常在 CPU 5% 以下，不会影响游戏流畅度。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">支持哪些操作系统？<span>+</span></div>
+                        <div class="faq-answer">支持 Windows 10 64位 及 Windows 11 64位 系统，暂不支持 Mac 或 Linux 系统。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">购买后如何获取更新？<span>+</span></div>
+                        <div class="faq-answer">购买会员后，您将获得永久更新权限，新版本会通过软件内的自动更新功能推送。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">能用手机玩辅助吗？<span>+</span></div>
+                        <div class="faq-answer">目前仅提供 PC 端版本。移动端版本（和平精英）正在开发中，敬请期待。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p style="color: #666; font-size: 0.9rem; margin-top: 10px;">
+                        ProAim 辅助致力于为玩家提供最专业的游戏辅助工具，坚持技术分享与安全第一的原则。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">软件下载</a></li>
+                        <li><a href="#">使用教程</a></li>
+                        <li><a href="#">技术论坛</a></li>
+                        <li><a href="#">联系客服</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>法律声明</h4>
+                    <ul>
+                        <li><a href="#">用户协议</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">免责声明</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li><a href="#">QQ: 12345678</a></li>
+                        <li><a href="#">Email: support@proaim.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 ProAim 辅助技术交流中心. All Rights Reserved. 本站仅供技术研究与交流使用。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab Switching Logic for Guide Section
+        function showGuide(event, sectionId) {
+            // Hide all articles
+            const articles = document.querySelectorAll('.guide-content article');
+            articles.forEach(article => {
+                article.classList.remove('active');
+            });
+
+            // Deactivate all buttons
+            const buttons = document.querySelectorAll('.guide-nav button');
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            // Show selected article
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Activate clicked button
+            event.target.classList.add('active');
+        }
+
+        // FAQ Toggle Logic
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const answer = item.nextElementSibling;
+                const icon = item.querySelector('span');
+                
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                    icon.textContent = '+';
+                } else {
+                    answer.style.display = 'block';
+                    icon.textContent = '-';
+                }
+            });
+        });
+    </script>
+</body>
+                                              </html>
