@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>火影忍者pixx - 高清资源与同人图库</title>
+    <meta name="description" content="火影忍者pixx是一个专注于火影忍者同人创作、高清壁纸及二次元插画展示的在线社区。提供最新的忍界同人图、角色壁纸下载及创作交流平台。">
+    <meta name="keywords" content="火影忍者pixx,火影同人图,火影壁纸,忍界同人,火影插画,岸本齐史同人">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff9800;
+            --secondary-color: #ff5722;
+            --dark-bg: #121212;
+            --card-bg: #1e1e1e;
+            --text-main: #ffffff;
+            --text-muted: #b0b0b0;
+            --accent-blue: #4fc3f7;
+            --spacing-unit: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(18, 18, 18, 0.95);
+            border-bottom: 1px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .search-box {
+            display: flex;
+            background: #333;
+            border-radius: 20px;
+            padding: 5px 15px;
+        }
+
+        .search-box input {
+            background: transparent;
+            border: none;
+            color: white;
+            outline: none;
+            width: 200px;
+        }
+
+        .search-box button {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://picsum.photos/seed/kyuubi/1920/600') no-repeat center center/cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            color: #ddd;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            margin-left: 10px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 152, 0, 0.3);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 25px;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-title a {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #333;
+        }
+
+        .card-body {
+            padding: 15px;
+        }
+
+        .card-tag {
+            font-size: 12px;
+            color: var(--accent-blue);
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .card-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .card:hover .card-overlay {
+            opacity: 1;
+        }
+
+        .view-btn {
+            background: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        /* Categories */
+        .category-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .cat-item {
+            background: #2c2c2c;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .cat-item:hover, .cat-item.active {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Feature Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .feature-box {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .feature-box h3 {
+            margin-bottom: 10px;
+        }
+
+        .feature-box p {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0a0a;
+            padding: 50px 0 20px;
+            margin-top: 60px;
+            border-top: 1px solid #333;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+            color: #555;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+            nav ul {
+                margin: 15px 0;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero-content h1 {
+                font-size: 32px;
+            }
+            .features {
+                grid-template-columns: 1fr;
+            }
+            .search-box {
+                width: 100%;
+                margin-top: 10px;
+            }
+            .search-box input {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <span>🔥</span> 火影忍者<span style="color:var(--text-muted)">pixx</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">同人图库</a></li>
+                    <li><a href="#">壁纸专区</a></li>
+                    <li><a href="#">角色鉴赏</a></li>
+                    <li><a href="#">周边资讯</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索角色或作品...">
+                <button>🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>探索忍界无限可能</h1>
+                <p>汇聚全球火影忍者同人创作者的高质量画作，为您提供最纯粹的二次元视觉盛宴。</p>
+                <div>
+                    <a href="#" class="btn btn-primary">浏览图库</a>
+                    <a href="#" class="btn btn-secondary">上传作品</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Categories -->
+            <div class="category-bar">
+                <div class="cat-item active">全部</div>
+                <div class="cat-item">漩涡鸣人</div>
+                <div class="cat-item">宇智波佐助</div>
+                <div class="cat-item">春野樱</div>
+                <div class="cat-item">我爱罗</div>
+                <div class="cat-item">卡卡西</div>
+                <div class="cat-item">宇智波一族</div>
+                <div class="cat-item">晓组织</div>
+                <div class="cat-item">火影忍者疾风传</div>
+            </div>
+
+            <!-- Latest Uploads -->
+            <section>
+                <div class="section-title">
+                    <h2>最新上传</h2>
+                    <a href="#">查看更多 &rarr;</a>
+                </div>
+                <div class="gallery-grid">
+                    <article class="card">
+                        <div style="position: relative;">
+                            <img src="https://picsum.photos/seed/naruto1/400/300" alt="鸣人同人图" class="card-image">
+                            <div class="card-overlay">
+                                <span class="view-btn">查看详情</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <span class="card-tag">热血 / 战斗</span>
+                            <h3 class="card-title">九尾查克拉模式下的鸣人</h3>
+                            <div class="card-meta">
+                                <span>作者: UzumakiArt</span>
+                                <span>2小时前</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div style="position: relative;">
+                            <img src="https://picsum.photos/seed/sasuke2/400/300" alt="佐助同人图" class="card-image">
+                            <div class="card-overlay">
+                                <span class="view-btn">查看详情</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <span class="card-tag">羁绊 / 情感</span>
+                            <h3 class="card-title">宇智波佐助的写轮眼特写</h3>
+                            <div class="card-meta">
+                                <span>作者: ItachiFan</span>
+                                <span>5小时前</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div style="position: relative;">
+                            <img src="https://picsum.photos/seed/sakura3/400/300" alt="小樱同人图" class="card-image">
+                            <div class="card-overlay">
+                                <span class="view-btn">查看详情</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <span class="card-tag">唯美 / 唯物</span>
+                            <h3 class="card-title">春野樱的微笑</h3>
+                            <div class="card-meta">
+                                <span>作者: SakuraHeart</span>
+                                <span>昨天</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div style="position: relative;">
+                            <img src="https://picsum.photos/seed/kakashi4/400/300" alt="卡卡西同人图" class="card-image">
+                            <div class="card-overlay">
+                                <span class="view-btn">查看详情</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <span class="card-tag">帅气 / 随性</span>
+                            <h3 class="card-title">卡卡西老师的神威</h3>
+                            <div class="card-meta">
+                                <span>作者: CopyMaster</span>
+                                <span>昨天</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div style="position: relative;">
+                            <img src="https://picsum.photos/seed/itachi5/400/300" alt="鼬同人图" class="card-image">
+                            <div class="card-overlay">
+                                <span class="view-btn">查看详情</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <span class="card-tag">悲剧 / 英雄</span>
+                            <h3 class="card-title">宇智波鼬的离别</h3>
+                            <div class="card-meta">
+                                <span>作者: UchihaLegacy</span>
+                                <span>2天前</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div style="position: relative;">
+                            <img src="https://picsum.photos/seed/obito6/400/300" alt="带土同人图" class="card-image">
+                            <div class="card-overlay">
+                                <span class="view-btn">查看详情</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <span class="card-tag">暗黑 / 预言</span>
+                            <h3 class="card-title">宇智波斑与带土</h3>
+                            <div class="card-meta">
+                                <span>作者: AkatsukiKing</span>
+                                <span>3天前</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Features -->
+            <section style="margin-top: 60px;">
+                <div class="section-title">
+                    <h2>平台特色</h2>
+                </div>
+                <div class="features">
+                    <div class="feature-box">
+                        <div class="feature-icon">🎨</div>
+                        <h3>高清大图</h3>
+                        <p>所有上传作品均经过筛选，提供4K超清分辨率，细节清晰可见。</p>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon">🤝</div>
+                        <h3>创作者社区</h3>
+                        <p>支持在线评论、点赞与收藏，与全球画师交流心得。</p>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon">📱</div>
+                        <h3>移动端适配</h3>
+                        <p>无论是手机还是平板，随时随地都能享受忍界之旅。</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="logo" style="margin-bottom: 15px;">
+                    <span>🔥</span> 火影忍者<span style="color:var(--text-muted)">pixx</span>
+                </div>
+                <p style="color: #666; font-size: 14px; line-height: 1.8;">
+                    致力于打造最专业的火影忍者同人艺术社区。尊重版权，欢迎优秀的创作者加入。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">最新图集</a></li>
+                    <li><a href="#">热门榜单</a></li>
+                    <li><a href="#">投稿指南</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>热门分类</h4>
+                <ul>
+                    <li><a href="#">火影篇</a></li>
+                    <li><a href="#">疾风传</a></li>
+                    <li><a href="#">博人传</a></li>
+                    <li><a href="#">剧场版</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="#">联系合作</a></li>
+                    <li><a href="#">用户协议</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                    <li><a href="#">版权声明</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 火影忍者pixx. All rights reserved. 本站为同人作品展示平台，与官方无任何关联。
+        </div>
+    </footer>
+
+</body>
+                                            </html>
