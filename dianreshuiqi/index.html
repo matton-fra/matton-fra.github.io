@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="专业电热水器维修服务平台，提供热水器漏水、不加热、漏水维修、安全检查及上门维修服务。快速响应，正规师傅，质量保障。">
+    <meta name="keywords" content="电热水器维修,热水器维修,热水器漏水,热水器不加热,热水器清洗">
+    <title>电热水器维修-专业上门维修与故障排查指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --primary-dark: #0056b3;
+            --secondary-color: #f8f9fa;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-color: #e0e0e0;
+            --success-color: #28a745;
+            --danger-color: #dc3545;
+            --warning-color: #ffc107;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 8px rgba(0,0,0,0.1);
+            --radius: 8px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #ffffff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .header-actions .btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: #fff;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: #fff;
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            border-color: var(--primary-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md);
+            display: inline-flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .contact-item i {
+            color: var(--primary-color);
+            font-size: 20px;
+        }
+
+        /* Main Content Grid */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 2.5fr 1fr;
+            gap: 30px;
+            padding: 40px 0;
+        }
+
+        /* Common Section Styles */
+        section {
+            margin-bottom: 50px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        /* Fault Diagnosis */
+        .diagnosis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .diagnosis-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 20px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .diagnosis-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-sm);
+            transform: translateY(-2px);
+        }
+
+        .diagnosis-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .diagnosis-card p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .diagnosis-icon {
+            font-size: 24px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* Service Process */
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 30px;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--border-color);
+            z-index: 0;
+        }
+
+        .step-item {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            flex: 1;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: #fff;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .step-item h4 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .step-item p {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .sidebar-widget {
+            background: var(--secondary-color);
+            padding: 25px;
+            border-radius: var(--radius);
+        }
+
+        .sidebar-widget h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .price-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px dashed var(--border-color);
+            font-size: 14px;
+        }
+
+        .price-list li:last-child {
+            border-bottom: none;
+        }
+
+        .price-list li span:last-child {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 15px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .faq-answer {
+            font-size: 14px;
+            color: var(--text-light);
+            padding-left: 5px;
+            border-left: 3px solid var(--primary-color);
+        }
+
+        /* Brands */
+        .brands-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 20px 0;
+        }
+
+        .brand-item {
+            font-size: 18px;
+            font-weight: 600;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Footer */
+        footer {
+            background: #f8f9fa;
+            padding: 50px 0 20px;
+            margin-top: 50px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #e9ecef;
+            color: var(--text-light);
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .process-steps {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .process-steps::before {
+                width: 2px;
+                height: 100%;
+                left: 25px;
+                top: 0;
+            }
+
+            .step-number {
+                margin: 0 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v20M2 12h20"></path>
+                <path d="M12 2a10 10 0 0 1 10 10"></path>
+                <path d="M12 2a10 10 0 0 0-10 10"></path>
+            </svg>
+            <span>速修家电</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">维修项目</a></li>
+                <li><a href="#">收费标准</a></li>
+                <li><a href="#">常见问题</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <a href="#" class="btn btn-outline">在线咨询</a>
+            <a href="#" class="btn btn-primary">预约维修</a>
+        </div>
+    </div>
+</header>
+
+<main class="container">
+    <section class="hero">
+        <h1>电热水器维修上门服务</h1>
+        <p>专业维修团队，30分钟极速响应。解决漏水、不加热、漏电等故障，提供清洗保养与安全检测。</p>
+        <div class="contact-card">
+            <div class="contact-item">
+                <i>📞</i>
+                <span>400-123-4567</span>
+            </div>
+            <div class="contact-item">
+                <i>⏰</i>
+                <span>24小时全天候服务</span>
+            </div>
+            <div class="contact-item">
+                <i>✅</i>
+                <span>先修后付，质量保障</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="main-layout">
+        <!-- Left Column -->
+        <div class="content-column">
+            
+            <!-- Common Faults -->
+            <section>
+                <div class="section-header">
+                    <h2 class="section-title">常见故障诊断</h2>
+                </div>
+                <div class="diagnosis-grid">
+                    <article class="diagnosis-card">
+                        <span class="diagnosis-icon">💧</span>
+                        <h3>热水器漏水</h3>
+                        <p>检查排污口、混水阀或镁棒腐蚀，及时更换配件防止内胆炸裂。</p>
+                    </article>
+                    <article class="diagnosis-card">
+                        <span class="diagnosis-icon">🔥</span>
+                        <h3>热水器不加热</h3>
+                        <p>可能是温控器故障、加热管损坏或电源插头接触不良。</p>
+                    </article>
+                    <article class="diagnosis-card">
+                        <span class="diagnosis-icon">⚡</span>
+                        <h3>漏电保护跳闸</h3>
+                        <p>检查是否接地不良或线路老化，切勿自行拆卸，需专业电工处理。</p>
+                    </article>
+                    <article class="diagnosis-card">
+                        <span class="diagnosis-icon">🚿</span>
+                        <h3>花洒不出水</h3>
+                        <p>清洗花洒滤网或镁棒堵塞，解决水压不足问题。</p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Service Process -->
+            <section>
+                <div class="section-header">
+                    <h2 class="section-title">标准化服务流程</h2>
+                </div>
+                <div class="process-steps">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <h4>电话预约</h4>
+                        <p>描述故障情况</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <h4>上门检测</h4>
+                        <p>专业师傅现场排查</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <h4>报价维修</h4>
+                        <p>确认价格后再施工</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <h4>售后保障</h4>
+                        <p>质保期内免费维修</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Brand Support -->
+            <section>
+                <div class="section-header">
+                    <h2 class="section-title">支持品牌</h2>
+                </div>
+                <div class="brands-grid">
+                    <span class="brand-item">海尔</span>
+                    <span class="brand-item">美的</span>
+                    <span class="brand-item">A.O.史密斯</span>
+                    <span class="brand-item">万和</span>
+                    <span class="brand-item">林内</span>
+                    <span class="brand-item">能率</span>
+                    <span class="brand-item">帅康</span>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Right Column -->
+        <aside class="sidebar-column">
+            
+            <!-- Price List -->
+            <div class="sidebar-widget">
+                <h3>维修参考价格</h3>
+                <ul class="price-list">
+                    <li><span>清洗保养</span><span>¥80起</span></li>
+                    <li><span>更换镁棒</span><span>¥50-120</span></li>
+                    <li><span>更换温控器</span><span>¥80-200</span></li>
+                    <li><span>更换加热管</span><span>¥100-300</span></li>
+                    <li><span>更换泄压阀</span><span>¥40-80</span></li>
+                    <li><span>上门服务费</span><span>¥50</span></li>
+                </ul>
+                <p style="font-size:12px; color:#999; margin-top:15px;">* 具体价格以师傅现场检测报价为准</p>
+            </div>
+
+            <!-- FAQ -->
+            <div class="sidebar-widget">
+                <h3>常见问题 (FAQ)</h3>
+                <div class="faq-item">
+                    <div class="faq-question">维修需要多长时间？ <span>+</span></div>
+                    <div class="faq-answer">简单故障（如清洗、更换小配件）通常1小时内完成；复杂故障需根据配件库存情况安排。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">收费透明吗？ <span>+</span></div>
+                    <div class="faq-answer">是的，我们承诺先报价后维修，维修过程中不增加任何隐形费用。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">保修期多久？ <span>+</span></div>
+                    <div class="faq-answer">更换的配件提供3-12个月质保，具体视品牌和配件类型而定。</div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div style="background: var(--primary-color); color: white; padding: 25px; border-radius: var(--radius); text-align: center;">
+                <h3 style="margin-bottom: 10px;">急需维修？</h3>
+                <p style="margin-bottom: 20px; font-size: 14px; opacity: 0.9;">立即拨打，专业师傅为您服务</p>
+                <a href="tel:4001234567" class="btn" style="background: white; color: var(--primary-color); padding: 12px 30px; border-radius: 20px; font-weight: bold; display: inline-block;">400-123-4567</a>
+            </div>
+
+        </aside>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <p style="color: var(--text-light); font-size: 14px; line-height: 1.8;">
+                    我们致力于为家庭提供专业的家电维修服务。拥有多年行业经验，维修师傅持证上岗，服务覆盖全国主要城市。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>服务项目</h4>
+                <ul>
+                    <li><a href="#">电热水器维修</a></li>
+                    <li><a href="#">燃气热水器维修</a></li>
+                    <li><a href="#">空调维修清洗</a></li>
+                    <li><a href="#">洗衣机维修</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>服务保障</h4>
+                <ul>
+                    <li><a href="#">正规发票</a></li>
+                    <li><a href="#">质量保证</a></li>
+                    <li><a href="#">价格透明</a></li>
+                    <li><a href="#">上门快速</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系方式</h4>
+                <ul>
+                    <li>电话：400-123-4567</li>
+                    <li>邮箱：service@example.com</li>
+                    <li>地址：某某市某某区科技园A栋</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 速修家电维修服务平台 版权所有 | 本页面仅为展示用途，不作为真实业务承接。</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
