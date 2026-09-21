@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dnf女鬼剑-全职业流派解析与装备搭配指南</title>
+    <meta name="description" content="本站提供dnf女鬼剑士（暗夜使者）四大职业详细攻略，包含剑宗、剑魔、剑帝、暗帝的技能加点、装备流派、刷图技巧及最新副本通关指南。">
+    <meta name="keywords" content="dnf女鬼剑, 剑宗, 剑魔, 剑帝, 暗帝, DNF攻略, 职业排行, 装备搭配">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #5e3a78;
+            --secondary-color: #d63384;
+            --accent-color: #ffcc00;
+            --bg-dark: #121212;
+            --bg-card: #1e1e1e;
+            --text-main: #ffffff;
+            --text-muted: #b0b0b0;
+            --border-radius: 8px;
+            --spacing-unit: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: rgba(30, 30, 30, 0.95);
+            border-bottom: 2px solid var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(30, 30, 30, 0.8), rgba(30, 30, 30, 0.6)), url('https://picsum.photos/seed/dnfhero/1920/1080') center/cover no-repeat;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at center, transparent 0%, var(--bg-dark) 90%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            background: linear-gradient(to right, #fff, #d63384);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 15px rgba(94, 58, 120, 0.4);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Section Layout */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 40px;
+            border-left: 5px solid var(--secondary-color);
+            padding-left: 20px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            color: var(--text-main);
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            margin-top: 5px;
+        }
+
+        /* Class Cards Grid */
+        .class-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .class-card {
+            background-color: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #333;
+        }
+
+        .class-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border-color: var(--primary-color);
+        }
+
+        .class-img {
+            height: 200px;
+            background-color: #2a2a2a;
+            position: relative;
+        }
+
+        .class-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.9;
+        }
+
+        .class-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .class-content {
+            padding: 20px;
+        }
+
+        .class-content h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .class-content p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .class-tags span {
+            display: inline-block;
+            background-color: #333;
+            color: #aaa;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        /* Equipment Section */
+        .equipment-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .equip-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .equip-item {
+            background-color: var(--bg-card);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .equip-icon {
+            width: 80px;
+            height: 80px;
+            background-color: #2a2a2a;
+            border-radius: 8px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+        }
+
+        .equip-info h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .equip-info p {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .equip-sidebar {
+            background-color: var(--bg-card);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            height: fit-content;
+        }
+
+        .equip-sidebar h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+
+        .sidebar-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #333;
+            font-size: 14px;
+        }
+
+        .sidebar-list li a {
+            color: var(--text-muted);
+        }
+
+        .sidebar-list li a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--bg-card);
+            margin-bottom: 15px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .faq-question:hover {
+            background-color: #252525;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-muted);
+            font-size: 15px;
+            display: none;
+            border-top: 1px solid #333;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--secondary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0a0a;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+            border-top: 1px solid #333;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+            color: #555;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .equipment-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <span>DNF</span> 女鬼剑攻略库
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#classes">职业选择</a></li>
+                    <li><a href="#equipment">装备搭配</a></li>
+                    <li><a href="#news">最新资讯</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>dnf女鬼剑士：四大职业深度解析</h1>
+                <p>从暗夜使者转职而来的四大剑士，拥有截然不同的战斗风格。无论你是追求极致输出的剑宗，还是操控魔剑的剑魔，这里都有你需要的全套攻略。</p>
+                <a href="#classes" class="btn btn-primary">开始职业分析</a>
+            </div>
+        </section>
+
+        <!-- Class Selection Section -->
+        <section id="classes" class="container">
+            <div class="section-header">
+                <div class="section-title">
+                    <h2>四大职业流派</h2>
+                    <p>根据你的操作习惯和游戏目标选择最适合的职业</p>
+                </div>
+            </div>
+
+            <div class="class-grid">
+                <!-- Card 1: Jiàn Zōng -->
+                <article class="class-card">
+                    <div class="class-img">
+                        <img src="https://picsum.photos/seed/dnfjianzong/400/300" alt="DNF剑宗">
+                        <span class="class-badge">物理输出</span>
+                    </div>
+                    <div class="class-content">
+                        <h3>剑宗 (EXE)</h3>
+                        <p>操控巨剑、太刀、钝器、短剑，通过不同武器精通改变技能形态。拥有极高的爆发能力和灵活的连招，是主流输出职业之一。</p>
+                        <div class="class-tags">
+                            <span>高爆发</span>
+                            <span>武器精通</span>
+                            <span>连招流畅</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2: Jiàn Mó -->
+                <article class="class-card">
+                    <div class="class-img">
+                        <img src="https://picsum.photos/seed/dnfjianmo/400/300" alt="DNF剑魔">
+                        <span class="class-badge">百分比物理</span>
+                    </div>
+                    <div class="class-content">
+                        <h3>剑魔</h3>
+                        <p>能够召唤魔剑·巴拉克，通过使用魔剑赋予技能特殊效果。拥有极强的单挑能力和生存能力，是团本中的核心输出。</p>
+                        <div class="class-tags">
+                            <span>魔剑加持</span>
+                            <span>生存强</span>
+                            <span>爆发极高</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3: Jiàn Dì -->
+                <article class="class-card">
+                    <div class="class-img">
+                        <img src="https://picsum.photos/seed/dnfjiandi/400/300" alt="DNF剑帝">
+                        <span class="class-badge">百分比物理</span>
+                    </div>
+                    <div class="class-content">
+                        <h3>剑帝</h3>
+                        <p>使用太刀的极致柔化流，以极高的技能释放速度和华丽的大范围攻击著称。操作上限极高，是追求极致体验玩家的首选。</p>
+                        <div class="class-tags">
+                            <span>柔化流</span>
+                            <span>攻速快</span>
+                            <span>视觉盛宴</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 4: Àn Dì -->
+                <article class="class-card">
+                    <div class="class-img">
+                        <img src="https://picsum.photos/seed/dnfandi/400/300" alt="DNF暗帝">
+                        <span class="class-badge">百分比魔法</span>
+                    </div>
+                    <div class="class-content">
+                        <h3>暗帝</h3>
+                        <p>利用黑暗能量进行攻击，拥有强大的控制技能和减防能力。既能作为主力输出，也能在团队中提供关键的控制和辅助增益。</p>
+                        <div class="class-tags">
+                            <span>控制强</span>
+                            <span>减防</span>
+                            <span>多面手</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Equipment & Guide Section -->
+        <section id="equipment" class="container" style="background-color: #181818; border-radius: 12px; margin: 40px 0;">
+            <div class="section-header">
+                <div class="section-title">
+                    <h2>装备搭配与加点推荐</h2>
+                    <p>最新版本的毕业装备与主流加点方案</p>
+                </div>
+            </div>
+
+            <div class="equipment-layout">
+                <div class="equip-list">
+                    <div class="equip-item">
+                        <div class="equip-icon">⚔️</div>
+                        <div class="equip-info">
+                            <h4>主流毕业套装：MP直伤流</h4>
+                            <p>核心装备：灵宝护魂手镯、深潜迷航护肩、深潜迷航腰带、深潜迷航鞋子、恩特精灵戒指、深潜迷航耳环、深潜迷航左槽、深潜迷航右槽、深潜迷航项链。适用于所有女鬼剑职业。</p>
+                        </div>
+                    </div>
+
+                    <div class="equip-item">
+                        <div class="equip-icon">🛡️</div>
+                        <div class="equip-info">
+                            <h4>次级选择：自定义流</h4>
+                            <p>追求极致伤害时，可根据职业特性选择自定义史诗。剑宗推荐攻速/暴击/伤害，剑帝推荐攻速/技能范围/伤害，暗帝推荐冷却/技能范围/伤害。</p>
+                        </div>
+                    </div>
+
+                    <div class="equip-item">
+                        <div class="equip-icon">🧠</div>
+                        <div class="equip-info">
+                            <h4>技能加点思路</h4>
+                            <p>通用技能：上挑（满）、连突刺（1）、三段斩（1）、后跳（1）、跃翔（1）。核心输出技能根据职业特性优先级分配，SP点尽量留给核心爆发技能。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="equip-sidebar">
+                    <h3>热门攻略导航</h3>
+                    <ul class="sidebar-list">
+                        <li><a href="#">剑宗：钝器流 vs 太刀流</a></li>
+                        <li><a href="#">剑魔：魔剑技能释放技巧</a></li>
+                        <li><a href="#">剑帝：柔化时机教学</a></li>
+                        <li><a href="#">暗帝：暗影盛宴加点</a></li>
+                        <li><a href="#">护石与符文选择指南</a></li>
+                        <li><a href="#">2024版本装备附魔推荐</a></li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section id="news" class="container">
+            <div class="section-header">
+                <div class="section-title">
+                    <h2>最新动态与资讯</h2>
+                    <p>关注游戏版本更新与女鬼剑职业调整</p>
+                </div>
+            </div>
+            
+            <div class="class-grid">
+                <article class="class-card">
+                    <div class="class-img" style="height: 150px;">
+                        <img src="https://picsum.photos/seed/dnfnews1/400/200" alt="新副本">
+                    </div>
+                    <div class="class-content">
+                        <h3>新副本开放：幽暗岛</h3>
+                        <p>女鬼剑职业在新副本中表现如何？详细解析通关机制与BOSS打法。</p>
+                    </div>
+                </article>
+                <article class="class-card">
+                    <div class="class-img" style="height: 150px;">
+                        <img src="https://picsum.photos/seed/dnfnews2/400/200" alt="职业平衡">
+                    </div>
+                    <div class="class-content">
+                        <h3>职业平衡性调整</h3>
+                        <p>最新一次更新对剑帝和暗帝的技能数据进行了微调，数据对比分析。</p>
+                    </div>
+                </article>
+                <article class="class-card">
+                    <div class="class-img" style="height: 150px;">
+                        <img src="https://picsum.photos/seed/dnfnews3/400/200" alt="活动">
+                    </div>
+                    <div class="class-content">
+                        <h3>限时活动：女鬼剑专属装扮</h3>
+                        <p>参与活动即可获取限定称号与称号宝珠，提升角色属性。</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="container">
+            <div class="section-header">
+                <div class="section-title">
+                    <h2>常见问题解答</h2>
+                    <p>新手玩家最关心的职业与装备问题</p>
+                </div>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">女鬼剑哪个职业最强？</div>
+                    <div class="faq-answer">目前版本中，剑宗和剑魔在伤害数据上表现较为突出，但剑帝在操作手感上更受玩家喜爱。选择职业主要取决于你的操作习惯，而非绝对数值。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">转职任务在哪里接？</div>
+                    <div class="faq-answer">在50级之后，前往格兰之森的转职使者处接取转职任务。完成前置条件后即可进行转职。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">暗帝是物理还是魔法职业？</div>
+                    <div class="faq-answer">暗帝是百分比魔法攻击职业，主要依靠魔法的控制与减防能力来辅助团队。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">新号玩哪个职业升级快？</div>
+                    <div class="faq-answer">剑宗和剑帝的清图能力较强，适合快速升级。建议根据职业外观选择。</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于本站</h4>
+                    <ul>
+                        <li><a href="#">网站介绍</a></li>
+                        <li><a href="#">投稿指南</a></li>
+                        <li><a href="#">免责声明</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">职业技能</a></li>
+                        <li><a href="#">装备百科</a></li>
+                        <li><a href="#">副本攻略</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 DNF女鬼剑攻略库. All rights reserved. 本站内容仅供玩家参考，不涉及官方商业活动。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close others
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
