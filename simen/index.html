@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>四门 - 豪华四门轿跑设计美学与选购指南</title>
+    <meta name="description" content="四门 - 专注于四门轿跑、高性能轿车及豪华行政级座驾的深度评测、设计解析与购车指南。探索四门车型的空间美学与驾驶乐趣。">
+    <meta name="keywords" content="四门, 轿跑, 豪华轿车, 四门设计, 汽车评测">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #1a1a1a;
+            --accent-color: #c9a227;
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+            --border-radius: 8px;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 6px 12px rgba(0,0,0,0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%), url('https://picsum.photos/seed/carhero/1920/1080.jpg') center/cover no-repeat;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #ddd;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent-color);
+            color: #fff;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #b08d24;
+            transform: translateY(-2px);
+        }
+
+        /* Container */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 4rem var(--spacing-unit);
+        }
+
+        /* Section Titles */
+        .section-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+        }
+
+        /* Grid Layouts */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Card Styles */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-5px);
+        }
+
+        .card-image {
+            height: 200px;
+            background-color: #eee;
+            position: relative;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.7);
+            color: #fff;
+            padding: 4px 10px;
+            font-size: 0.8rem;
+            border-radius: 4px;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-tag {
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .card-excerpt {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            flex: 1;
+        }
+
+        .card-link {
+            font-weight: 600;
+            color: var(--primary-color);
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .card-link::after {
+            content: '→';
+            margin-left: 5px;
+            transition: margin-left 0.2s;
+        }
+
+        .card-link:hover::after {
+            margin-left: 10px;
+        }
+
+        /* Features Section */
+        .features {
+            background-color: #fff;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .feature-item h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-item p {
+            color: var(--text-secondary);
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            box-shadow: var(--shadow-sm);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .comparison-table th {
+            background-color: var(--primary-color);
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            background: #fff;
+            margin-bottom: 1rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--text-secondary);
+            display: none;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 1rem;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 4rem var(--spacing-unit) 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a {
+            color: #aaa;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">四<span>门</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#design">设计美学</a></li>
+                    <li><a href="#models">热门车型</a></li>
+                    <li><a href="#guide">选购指南</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-content">
+                <h1>四门设计的完美平衡</h1>
+                <p>探索轿车与跑车的完美融合，体验兼顾日常实用与极致性能的四门美学。</p>
+                <a href="#models" class="btn">探索车型</a>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features container">
+            <div class="section-header">
+                <h2>四门设计的核心优势</h2>
+                <p>为什么四门车型依然是现代家庭与性能爱好者的首选？</p>
+            </div>
+            <div class="grid-3">
+                <div class="feature-item">
+                    <div class="feature-icon">🚗</div>
+                    <h3>实用性与空间</h3>
+                    <p>相比两门跑车，四门设计提供了更宽敞的后排乘坐空间，轻松容纳成年人，满足家庭出行需求。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <h3>性能与便利并存</h3>
+                    <p>无需牺牲驾驶乐趣，四门车型依然保留高性能引擎与操控性，同时解决了上下车的便捷性问题。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">💎</div>
+                    <h3>优雅的线条美学</h3>
+                    <p>四门车身设计能够创造出更流畅、低趴且富有张力的视觉效果，展现出独特的豪华气质。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trending Models Section -->
+        <section id="models" class="container">
+            <div class="section-header">
+                <h2>热门四门车型推荐</h2>
+                <p>精选市场上备受瞩目的四门轿跑与高性能轿车</p>
+            </div>
+            <div class="grid-3">
+                <article class="card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/sport1/600/400.jpg" alt="高性能四门轿车">
+                        <span class="card-badge">旗舰级</span>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">豪华行政</span>
+                        <h3 class="card-title">S-Class 风格四门轿跑</h3>
+                        <p class="card-excerpt">融合了旗舰轿车的舒适性与跑车的运动基因，提供宽敞的后排空间与极致的静谧性。</p>
+                        <a href="#" class="card-link">阅读详情</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/sport2/600/400.jpg" alt="紧凑型高性能车">
+                        <span class="card-badge">性能先锋</span>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">运动轿跑</span>
+                        <h3 class="card-title">M4 CSL 四门版</h3>
+                        <p class="card-excerpt">专为赛道而生，轻量化设计与强悍动力系统，让四门车型也能体验速度与激情。</p>
+                        <a href="#" class="card-link">阅读详情</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/sport3/600/400.jpg" alt="电动四门轿跑">
+                        <span class="card-badge">未来科技</span>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">电动轿跑</span>
+                        <h3 class="card-title">高性能电动四门轿跑</h3>
+                        <p class="card-excerpt">零排放的极致体验，瞬间扭矩带来的推背感，重新定义四门车型的未来形态。</p>
+                        <a href="#" class="card-link">阅读详情</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Comparison Section -->
+        <section id="design" class="container" style="background-color: #fff; border-radius: var(--border-radius); box-shadow: var(--shadow-sm); padding: 3rem;">
+            <div class="section-header">
+                <h2>四门 vs 两门：如何选择？</h2>
+                <p>通过详细的参数对比，帮助您做出最适合的决策。</p>
+            </div>
+            <div style="overflow-x: auto;">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>对比维度</th>
+                            <th>四门车型</th>
+                            <th>两门车型</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>后排乘坐体验</strong></td>
+                            <td>宽敞，可容纳成年人，进出便利。</td>
+                            <td>局促，通常仅适合儿童或短途乘坐。</td>
+                        </tr>
+                        <tr>
+                            <td><strong>车身尺寸</strong></td>
+                            <td>通常更长、更宽，视觉上更稳重。</td>
+                            <td>更短、更低，视觉上更具侵略性。</td>
+                        </tr>
+                        <tr>
+                            <td><strong>日常实用性</strong></td>
+                            <td>高，适合家庭、商务接待及日常通勤。</td>
+                            <td>低，更适合单人驾驶或情侣出行。</td>
+                        </tr>
+                        <tr>
+                            <td><strong>价格区间</strong></td>
+                            <td>覆盖面广，从入门到百万级均有。</td>
+                            <td>通常溢价更高，定位更小众。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section id="guide" class="container">
+            <div class="section-header">
+                <h2>选购四门车的实用指南</h2>
+                <p>在决定购买前，您需要关注的关键配置与参数。</p>
+            </div>
+            <div class="grid-4">
+                <div class="card" style="padding: 1.5rem;">
+                    <h3>1. 确定预算</h3>
+                    <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">明确您的购车预算范围，包括购置税、保险及后续保养费用，避免超支。</p>
+                </div>
+                <div class="card" style="padding: 1.5rem;">
+                    <h3>2. 考虑动力类型</h3>
+                    <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">根据日常行驶路况，选择燃油车、混动还是纯电动，平衡动力与能耗。</p>
+                </div>
+                <div class="card" style="padding: 1.5rem;">
+                    <h3>3. 关注底盘调校</h3>
+                    <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">四门车往往承载更多重量，优秀的悬挂调校能保证行驶的舒适性与稳定性。</p>
+                </div>
+                <div class="card" style="padding: 1.5rem;">
+                    <h3>4. 实地试驾体验</h3>
+                    <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">亲自体验车辆的空间、视野及操控感，感受是否符合您的驾驶习惯。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="container" style="max-width: 800px;">
+            <div class="section-header">
+                <h2>常见问题 (FAQ)</h2>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">四门跑车后排空间真的够用吗？</div>
+                <div class="faq-answer">
+                    现代四门跑车在车身长度和轴距上都有显著优化，后排空间足以满足成年人日常乘坐，虽然不如传统三厢轿车宽敞，但已经非常实用。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">四门车型会影响车辆的性能吗？</div>
+                <div class="faq-answer">
+                    适当增加车门会增加车身重量，但优秀的工程设计会通过使用轻量化材料来抵消这一影响。现代高性能四门车型在加速和操控上已与两门车型相差无几。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">哪款四门车最适合家庭使用？</div>
+                <div class="faq-answer">
+                    这取决于您的具体需求。如果您需要兼顾商务与家用，建议考虑中型豪华轿车；如果更看重运动感，可以选择空间优化较好的紧凑型四门轿跑。
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>关于四门</h4>
+                <p style="color: #aaa; font-size: 0.9rem; line-height: 1.8;">
+                    四门致力于为您提供最全面的四门轿车、轿跑及豪华车型的评测与资讯。我们专注于解析设计美学，分享购车指南。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="#">设计赏析</a></li>
+                    <li><a href="#">热门榜单</a></li>
+                    <li><a href="#">购车建议</a></li>
+                    <li><a href="#">联系我们</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>热门分类</h4>
+                <ul>
+                    <li><a href="#">豪华品牌</a></li>
+                    <li><a href="#">运动型轿跑</a></li>
+                    <li><a href="#">电动车型</a></li>
+                    <li><a href="#">改装案例</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 四门设计美学. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Accordion Logic
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
