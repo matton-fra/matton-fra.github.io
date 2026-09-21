@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="积臣品牌官方网站。专注于高性能商务办公椅、人体工学椅及高端办公家具的研发与制造。提供积臣椅产品展示、选购指南、售后服务及品牌故事，打造舒适健康的办公环境。">
+    <meta name="keywords" content="积臣, 积臣椅子, 人体工学椅, 商务办公椅, 办公家具, 积臣官网">
+    <title>积臣-高品质人体工学椅与办公家具解决方案</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #f8f9fa;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --border-color: #e1e4e8;
+            --accent-color: #ff6b00;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+            --header-height: 70px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .section-header p {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #004494;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Header */
+        header {
+            height: var(--header-height);
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: var(--header-height);
+            height: 500px;
+            background: linear-gradient(rgba(0, 86, 179, 0.85), rgba(0, 40, 85, 0.85)), url('https://picsum.photos/seed/office123/1920/1080.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        /* Features Section */
+        .features {
+            background-color: var(--secondary-color);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .feature-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Product Showcase */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .product-image {
+            height: 250px;
+            overflow: hidden;
+            background-color: #f0f0f0;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 4px 8px;
+            font-size: 0.8rem;
+            border-radius: 2px;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-category {
+            color: var(--text-gray);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .product-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Tech Specs / Buying Guide */
+        .guide-section {
+            background-color: var(--secondary-color);
+        }
+
+        .guide-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .guide-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .guide-list li {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .guide-list li::before {
+            content: "✓";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .guide-image img {
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 10px;
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            padding: 20px 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-dark);
+        }
+
+        .faq-answer {
+            display: none;
+            padding-bottom: 20px;
+            color: var(--text-gray);
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #ccc;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner nav {
+                display: none;
+                position: absolute;
+                top: var(--header-height);
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+
+            .header-inner nav.active {
+                display: flex;
+            }
+
+            .header-inner nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .guide-container {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 40px 0;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 21h18M5 21V7l8-4 8 4v14M8 21v-2a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                </svg>
+                <span>积臣</span>
+            </a>
+            <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#products">全系产品</a></li>
+                    <li><a href="#features">核心优势</a></li>
+                    <li><a href="#guide">选购指南</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.9rem;">联系客服</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>舒适坐感，健康办公</h1>
+                <p>积臣专注人体工学椅研发15年，为您提供符合人体工学的久坐解决方案，提升工作效率，呵护您的脊椎健康。</p>
+                <div style="margin-top: 30px;">
+                    <a href="#products" class="btn btn-primary" style="padding: 12px 30px; font-size: 1.1rem;">探索系列</a>
+                    <a href="#guide" class="btn btn-outline" style="padding: 12px 30px; font-size: 1.1rem; border-color: white; color: white; margin-left: 15px;">如何选购</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="section features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>为什么选择积臣？</h2>
+                    <p>从材料到工艺，每一处细节都为了更好的坐感体验</p>
+                </div>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">✦</div>
+                        <h3>高弹网布</h3>
+                        <p>采用进口高弹透气网布，久坐不闷热，回弹力强，有效分散臀部压力。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">⚙</div>
+                        <h3>多维调节</h3>
+                        <p>头枕、扶手、腰靠、座深均可独立调节，完美匹配不同身高与体型的用户。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🛡</div>
+                        <h3>军工级五金</h3>
+                        <p>精选高强度铝合金五星脚与防爆底盘，承重能力强，安全系数高。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🧬</div>
+                        <h3>人体工学</h3>
+                        <p>独家专利腰靠设计，随坐姿动态调整，时刻给予腰部支撑，缓解疲劳。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Showcase -->
+        <section id="products" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>热销系列推荐</h2>
+                    <p>满足不同场景的办公需求，从家用到企业采购</p>
+                </div>
+                <div class="product-grid">
+                    <!-- Product 1 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <span class="product-tag">旗舰款</span>
+                            <img src="https://picsum.photos/seed/chair1/400/300" alt="积臣X1 人体工学椅">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">商务办公系列</div>
+                            <h3 class="product-title">积臣X1 旗舰版</h3>
+                            <div class="product-price">¥1,299 起</div>
+                            <div class="product-footer">
+                                <a href="#" class="btn btn-outline" style="padding: 6px 15px; font-size: 0.9rem;">详情</a>
+                                <a href="#" class="btn btn-primary" style="padding: 6px 15px; font-size: 0.9rem;">购买</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Product 2 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <span class="product-tag">热销</span>
+                            <img src="https://picsum.photos/seed/chair2/400/300" alt="积臣Pro 2.0 办公椅">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">家用电竞系列</div>
+                            <h3 class="product-title">积臣Pro 2.0</h3>
+                            <div class="product-price">¥899 起</div>
+                            <div class="product-footer">
+                                <a href="#" class="btn btn-outline" style="padding: 6px 15px; font-size: 0.9rem;">详情</a>
+                                <a href="#" class="btn btn-primary" style="padding: 6px 15px; font-size: 0.9rem;">购买</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Product 3 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <span class="product-tag">性价比</span>
+                            <img src="https://picsum.photos/seed/chair3/400/300" alt="积臣轻办公椅">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">轻办公系列</div>
+                            <h3 class="product-title">积臣轻办公椅</h3>
+                            <div class="product-price">¥499 起</div>
+                            <div class="product-footer">
+                                <a href="#" class="btn btn-outline" style="padding: 6px 15px; font-size: 0.9rem;">详情</a>
+                                <a href="#" class="btn btn-primary" style="padding: 6px 15px; font-size: 0.9rem;">购买</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Product 4 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <span class="product-tag">新品</span>
+                            <img src="https://picsum.photos/seed/chair4/400/300" alt="积臣网布工学椅">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">通用型系列</div>
+                            <h3 class="product-title">积臣经典网布款</h3>
+                            <div class="product-price">¥699 起</div>
+                            <div class="product-footer">
+                                <a href="#" class="btn btn-outline" style="padding: 6px 15px; font-size: 0.9rem;">详情</a>
+                                <a href="#" class="btn btn-primary" style="padding: 6px 15px; font-size: 0.9rem;">购买</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="#" class="btn btn-primary">查看全部产品</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Buying Guide Section -->
+        <section id="guide" class="section guide-section">
+            <div class="container guide-container">
+                <div class="guide-content">
+                    <h3>如何挑选适合您的积臣椅子？</h3>
+                    <p style="margin-bottom: 20px; color: var(--text-gray);">市面上椅子种类繁多，通过以下三个维度，您可以快速找到最适合自己的积臣办公椅：</p>
+                    <ul class="guide-list">
+                        <li><strong>身高适配：</strong>建议身高1.6米以上用户选择带3D或4D头枕的型号，以支撑颈椎；1.6米以下用户可选择基础头枕款。</li>
+                        <li><strong>体重考量：</strong>体重超过100kg的用户，请务必选择带有防爆底盘和加固五星脚的型号，确保安全。</li>
+                        <li><strong>使用场景：</strong>长时间伏案工作推荐“腰靠强化款”；游戏或娱乐休闲推荐“网布透气款”；追求静音推荐“PU轮款”。</li>
+                    </ul>
+                </div>
+                <div class="guide-image">
+                    <img src="https://picsum.photos/seed/ergonomic/600/400" alt="人体工学椅调整示意图">
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题解答</h2>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">积臣椅的保修期是多久？ <span>+</span></button>
+                        <div class="faq-answer">
+                            <p>积臣提供一年免费保修服务（非人为损坏），核心部件如气棒、底盘、网布等享受更长的质保周期，具体以购买时的保修卡为准。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">椅子发货前会安装好吗？ <span>+</span></button>
+                        <div class="faq-answer">
+                            <p>为了确保运输安全，积臣椅子出厂时大部分组件（如座垫、靠背、扶手）是拆分包装的，您只需在收到货后进行简单的组装即可，通常只需10-15分钟。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">网布坐久了会塌陷吗？ <span>+</span></button>
+                        <div class="faq-answer">
+                            <p>积臣采用的是高弹SUS网布，具有优异的抗疲劳性和回弹性。只要避免长时间重压或尖锐物体划伤，正常使用下坐感持久稳定。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">可以退换货吗？ <span>+</span></button>
+                        <div class="faq-answer">
+                            <p>支持7天无理由退换货。收到货后请检查包装是否完好，配件是否齐全。如果产品外观完好且未拆封使用，支持退换。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 20px;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 21h18M5 21V7l8-4 8 4v14M8 21v-2a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                        </svg>
+                        <span style="color: white;">积臣</span>
+                    </div>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">
+                        积臣致力于为全球用户提供高品质的人体工学椅产品，让每一次坐姿都成为健康的享受。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>产品系列</h4>
+                    <ul>
+                        <li><a href="#">人体工学椅</a></li>
+                        <li><a href="#">电竞椅</a></li>
+                        <li><a href="#">办公转椅</a></li>
+                        <li><a href="#">配件专区</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>客户服务</h4>
+                    <ul>
+                        <li><a href="#">联系我们</a></li>
+                        <li><a href="#">售后服务</a></li>
+                        <li><a href="#">安装教程</a></li>
+                        <li><a href="#">退换货政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">官方微博</a></li>
+                        <li><a href="#">知乎专栏</a></li>
+                        <li><a href="#">小红书</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 积臣家具有限公司 版权所有 | 隐私政策 | 使用条款</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const nav = document.getElementById('main-nav');
+            nav.classList.toggle('active');
+        }
+
+        // FAQ Accordion
+        function toggleFaq(button) {
+            const item = button.parentElement;
+            const isActive = item.classList.contains('active');
+            
+            // Close all other items
+            document.querySelectorAll('.faq-item').forEach(i => {
+                i.classList.remove('active');
+                i.querySelector('.faq-question span').textContent = '+';
+            });
+
+            // Toggle clicked item
+            if (!isActive) {
+                item.classList.add('active');
+                button.querySelector('span').textContent = '-';
+            }
+        }
+
+        // Smooth Scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    // Close mobile menu if open
+                    document.getElementById('main-nav').classList.remove('active');
+                    
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+          </html>
