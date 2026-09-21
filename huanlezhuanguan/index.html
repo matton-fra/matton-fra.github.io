@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="欢乐赚官网提供安全、高效的线上任务与推广平台。用户通过完成每日签到、浏览广告、推广分享即可获得现金奖励，支持多种提现方式，操作简单，收益稳定。">
+    <meta name="keywords" content="欢乐赚官网,欢乐赚,在线赚钱,任务平台,推广赚钱,兼职">
+    <title>欢乐赚官网-安全可靠的线上任务与推广平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff6b00;
+            --primary-hover: #e65100;
+            --secondary-color: #ff9800;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --text-light: #999999;
+            --bg-body: #f5f7fa;
+            --bg-card: #ffffff;
+            --border-color: #e1e4e8;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+            --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-card);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .btn-login {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+            cursor: pointer;
+        }
+
+        .btn-login:hover {
+            background: var(--primary-color);
+            color: #fff;
+        }
+
+        .btn-register {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            border: 2px solid var(--primary-color);
+            background: var(--primary-color);
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .btn-register:hover {
+            background: var(--primary-hover);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            line-height: 1.2;
+        }
+
+        .hero h1 .highlight {
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 50px;
+        }
+
+        .stat-item h3 {
+            font-size: 32px;
+            color: var(--primary-color);
+            font-weight: 800;
+        }
+
+        .stat-item p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        /* Features */
+        .features {
+            padding: 60px 0;
+            background: #fff;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-secondary);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            padding: 30px;
+            border-radius: var(--radius-md);
+            background: var(--bg-body);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: #fff3e0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* Task Types */
+        .tasks {
+            padding: 60px 0;
+        }
+
+        .task-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .task-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+        }
+
+        .task-img {
+            width: 100%;
+            height: 180px;
+            background-color: #eee;
+            object-fit: cover;
+        }
+
+        .task-content {
+            padding: 20px;
+        }
+
+        .task-tag {
+            display: inline-block;
+            padding: 4px 10px;
+            background: #ffebee;
+            color: #c62828;
+            font-size: 12px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .task-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .task-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            height: 42px;
+            overflow: hidden;
+        }
+
+        .task-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--border-color);
+            padding-top: 15px;
+        }
+
+        .reward {
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .btn-task {
+            padding: 6px 16px;
+            background: var(--primary-color);
+            color: #fff;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        /* User Guide */
+        .guide {
+            padding: 60px 0;
+            background: #fff;
+        }
+
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 40px;
+        }
+
+        .steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--border-color);
+            z-index: 0;
+        }
+
+        .step-item {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            flex: 1;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-color);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 800;
+            margin: 0 auto 20px;
+            border: 4px solid #fff;
+            box-shadow: 0 4px 10px rgba(255, 107, 0, 0.3);
+        }
+
+        .step-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .step-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            padding: 0 10px;
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 60px 0;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            margin-bottom: 15px;
+            padding: 20px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            font-size: 14px;
+            padding-left: 24px;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: #bdc3c7;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                height: auto;
+                padding: 15px 0;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .steps {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .steps::before {
+                width: 2px;
+                height: 100%;
+                left: 50%;
+                top: 0;
+                transform: translateX(-50%);
+            }
+
+            .step-number {
+                margin: 0 auto 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                欢乐赚<span>官网</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#home">首页</a></li>
+                    <li><a href="#tasks">赚钱任务</a></li>
+                    <li><a href="#guide">新手指南</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="btn-login">登录</button>
+                <button class="btn-register">立即注册</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container">
+                <h1>轻松赚钱，<br>尽在<span class="highlight">欢乐赚官网</span></h1>
+                <p>无需特殊技能，只需动动手指。浏览广告、参与推广、完成每日任务，即可在欢乐赚平台获得现金奖励，提现秒到账。</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>500W+</h3>
+                        <p>注册用户</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>1000W+</h3>
+                        <p>累计收益</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>24h</h3>
+                        <p>极速提现</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="features">
+            <div class="container">
+                <div class="section-title">
+                    <h2>平台优势</h2>
+                    <p>为什么选择欢乐赚官网进行线上兼职？</p>
+                </div>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                        </div>
+                        <h3>操作简单</h3>
+                        <p>界面友好，流程清晰。即使没有互联网经验的新手也能在几分钟内上手完成第一个任务。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+                        </div>
+                        <h3>任务丰富</h3>
+                        <p>涵盖浏览广告、问卷调查、试玩游戏、推广分享等多种类型，满足不同用户的兴趣和时间安排。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                        </div>
+                        <h3>安全可靠</h3>
+                        <p>平台严格审核合作商家，杜绝虚假广告，保障用户隐私与资金安全，收益真实可查。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tasks -->
+        <section class="tasks" id="tasks">
+            <div class="container">
+                <div class="section-title">
+                    <h2>热门任务</h2>
+                    <p>每日更新，任务多多，收益丰厚</p>
+                </div>
+                <div class="task-grid">
+                    <article class="task-card">
+                        <img src="https://picsum.photos/seed/money1/400/250" alt="浏览广告任务" class="task-img">
+                        <div class="task-content">
+                            <span class="task-tag">日常任务</span>
+                            <h3 class="task-title">每日签到领红包</h3>
+                            <p class="task-desc">每天登录平台签到即可获得基础现金奖励，连续签到奖励更丰厚，无需任何操作。</p>
+                            <div class="task-footer">
+                                <span class="reward">+0.5 元/天</span>
+                                <a href="#" class="btn-task">去完成</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="task-card">
+                        <img src="https://picsum.photos/seed/money2/400/250" alt="推广任务" class="task-img">
+                        <div class="task-content">
+                            <span class="task-tag">推广赚钱</span>
+                            <h3 class="task-title">邀请好友得佣金</h3>
+                            <p class="task-desc">生成专属推广链接或二维码，分享给好友注册并完成首单，即可获得高额佣金奖励。</p>
+                            <div class="task-footer">
+                                <span class="reward">邀请 1 人 +10 元</span>
+                                <a href="#" class="btn-task">立即推广</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="task-card">
+                        <img src="https://picsum.photos/seed/money3/400/250" alt="问卷调查" class="task-img">
+                        <div class="task-content">
+                            <span class="task-tag">问卷调查</span>
+                            <h3 class="task-title">填写消费调查</h3>
+                            <p class="task-desc">参与品牌方发布的消费行为问卷，填写真实信息即可获得现金或积分奖励。</p>
+                            <div class="task-footer">
+                                <span class="reward">+2-5 元/份</span>
+                                <a href="#" class="btn-task">去填写</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="task-card">
+                        <img src="https://picsum.photos/seed/money4/400/250" alt="试玩任务" class="task-img">
+                        <div class="task-content">
+                            <span class="task-tag">试玩体验</span>
+                            <h3 class="task-title">下载APP试玩</h3>
+                            <p class="task-desc">下载指定的合作APP并进行指定操作（如注册、升级、观看视频），体验后领取报酬。</p>
+                            <div class="task-footer">
+                                <span class="reward">+3-8 元/次</span>
+                                <a href="#" class="btn-task">去试玩</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- User Guide -->
+        <section class="guide" id="guide">
+            <div class="container">
+                <div class="section-title">
+                    <h2>新手入门指南</h2>
+                    <p>三步轻松开启你的赚钱之旅</p>
+                </div>
+                <div class="steps">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <h3 class="step-title">注册账号</h3>
+                        <p class="step-desc">在欢乐赚官网点击注册按钮，填写手机号码并设置密码，完成实名认证。</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <h3 class="step-title">选择任务</h3>
+                        <p class="step-desc">进入任务中心，浏览今日可做的任务列表，选择适合自己的任务类型开始操作。</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <h3 class="step-title">领取奖励</h3>
+                        <p class="step-desc">任务完成后，系统会自动结算金额并更新至账户余额。达到提现门槛即可申请提现。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq" id="faq">
+            <div class="container">
+                <div class="section-title">
+                    <h2>常见问题</h2>
+                    <p>关于欢乐赚官网的疑问解答</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">Q: 提现需要满足什么条件？</h3>
+                    <p class="faq-answer">A: 通常账户余额需达到 1 元以上即可申请提现。支持微信、支付宝等主流支付渠道，提现审核时间一般为 24 小时内。</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">Q: 任务做完后多久到账？</h3>
+                    <p class="faq-answer">A: 普通任务完成后立即到账，部分推广类或特殊任务可能需要人工审核，审核通过后即时到账。</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">Q: 如何提高收益？</h3>
+                    <p class="faq-answer">A: 建议每天坚持签到，积极参与推广分享（拉新），并多关注平台发布的限时活动，这些都能显著增加收益。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">平台简介</a></li>
+                        <li><a href="#">联系方式</a></li>
+                        <li><a href="#">加入我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">新手教程</a></li>
+                        <li><a href="#">提现说明</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">登录</a></li>
+                        <li><a href="#">注册</a></li>
+                        <li><a href="#">今日任务</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">官方微博</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 欢乐赚官网 版权所有. 本平台仅供展示，请理性对待网络兼职。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
