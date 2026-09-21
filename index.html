@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="天天美剧网 - 专业美剧资源分享平台，提供最新美剧在线观看、高清下载及详细剧集介绍。涵盖美剧推荐、剧集分类、观看指南及社区讨论。">
+    <meta name="keywords" content="天天美剧网, 美剧在线观看, 美剧下载, 美剧推荐, 电视剧资源">
+    <title>天天美剧网-最新美剧在线观看与高清下载指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e50914; /* Netflix Red style */
+            --primary-hover: #b20710;
+            --bg-color: #141414;
+            --card-bg: #1f1f1f;
+            --text-main: #ffffff;
+            --text-secondary: #b3b3b3;
+            --border-color: #333;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--text-secondary);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-unit);
+            padding-left: var(--spacing-unit);
+            border-left: 4px solid var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(0, 0, 0, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            padding: 12px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-menu a {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: #333;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .search-box input {
+            background: transparent;
+            border: none;
+            padding: 8px 12px;
+            color: white;
+            outline: none;
+            width: 200px;
+        }
+
+        .search-box button {
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            padding: 0 10px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background-image: linear-gradient(to top, var(--bg-color) 0%, transparent 100%), url('https://picsum.photos/seed/hero1/1200/600.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 60px;
+        }
+
+        .hero-content {
+            max-width: var(--container-width);
+            width: 100%;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .hero-tag {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4px 8px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.1s, opacity 0.2s;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: rgba(255, 255, 255, 0.3);
+            color: white;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Filters & Grid */
+        .content-area {
+            padding: 40px 0;
+        }
+
+        .filters {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+
+        .filter-chip {
+            background-color: var(--card-bg);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            cursor: pointer;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s;
+        }
+
+        .filter-chip:hover, .filter-chip.active {
+            background-color: var(--text-main);
+            color: var(--bg-color);
+            border-color: var(--text-main);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        .card-poster {
+            position: relative;
+            padding-top: 150%; /* 2:3 Aspect Ratio */
+            background-color: #000;
+        }
+
+        .card-poster img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s;
+        }
+
+        .card-rating {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #46d369;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 2px;
+        }
+
+        .card-info {
+            padding: 12px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card-tags {
+            margin-top: auto;
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            font-size: 0.7rem;
+            background-color: rgba(255,255,255,0.1);
+            padding: 2px 6px;
+            border-radius: 2px;
+        }
+
+        /* Latest Episodes List */
+        .list-section {
+            margin-top: 60px;
+        }
+
+        .episode-row {
+            display: grid;
+            grid-template-columns: 180px 1fr auto;
+            gap: 20px;
+            background-color: var(--card-bg);
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 6px;
+            align-items: center;
+        }
+
+        .episode-poster {
+            width: 120px;
+            height: 67px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .episode-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .episode-meta {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .episode-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-sm {
+            padding: 6px 12px;
+            font-size: 0.85rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: black;
+            padding: 40px 0;
+            margin-top: 60px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h4 {
+            color: var(--text-main);
+            margin-bottom: 15px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                height: 400px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav-menu {
+                display: none; /* Simplified for mobile */
+            }
+
+            .episode-row {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .episode-poster {
+                margin: 0 auto;
+            }
+
+            .episode-actions {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">天天美剧<span>网</span></a>
+            <nav class="nav-menu">
+                <a href="#" class="active">首页</a>
+                <a href="#">美剧推荐</a>
+                <a href="#">美剧分类</a>
+                <a href="#">观看指南</a>
+                <a href="#">社区讨论</a>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索美剧...">
+                <button>🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Banner -->
+        <section class="hero">
+            <div class="hero-content">
+                <span class="hero-tag">本周热门</span>
+                <h1>绝命毒师</h1>
+                <p>讲述了一位高中化学老师沃尔特·怀特在确诊癌症后，为了给家人留下财富，利用自己的化学知识制造并贩卖冰毒的故事。剧情跌宕起伏，被誉为美剧史上的巅峰之作。</p>
+                <div class="hero-actions">
+                    <a href="#" class="btn btn-primary">▶ 立即观看</a>
+                    <a href="#" class="btn btn-secondary">+ 加入片单</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="container content-area">
+            
+            <!-- Filter Tabs -->
+            <div class="filters">
+                <div class="filter-chip active">全部</div>
+                <div class="filter-chip">美剧</div>
+                <div class="filter-chip">英剧</div>
+                <div class="filter-chip">韩剧</div>
+                <div class="filter-chip">动漫</div>
+                <div class="filter-chip">电影</div>
+                <div class="filter-chip">纪录片</div>
+            </div>
+
+            <!-- Hot Dramas Grid -->
+            <h2 class="section-title">热门推荐</h2>
+            <div class="grid">
+                <!-- Card 1 -->
+                <article class="card">
+                    <div class="card-poster">
+                        <img src="https://picsum.photos/seed/drama1/300/450.jpg" alt="权力的游戏海报">
+                        <div class="card-rating">9.8</div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">权力的游戏</h3>
+                        <div class="card-meta">
+                            <span>8季</span>
+                            <span>完结</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">奇幻</span>
+                            <span class="tag">史诗</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="card">
+                    <div class="card-poster">
+                        <img src="https://picsum.photos/seed/drama2/300/450.jpg" alt="纸牌屋海报">
+                        <div class="card-rating">9.5</div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">纸牌屋</h3>
+                        <div class="card-meta">
+                            <span>6季</span>
+                            <span>完结</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">政治</span>
+                            <span class="tag">悬疑</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="card">
+                    <div class="card-poster">
+                        <img src="https://picsum.photos/seed/drama3/300/450.jpg" alt="西部世界海报">
+                        <div class="card-rating">9.2</div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">西部世界</h3>
+                        <div class="card-meta">
+                            <span>4季</span>
+                            <span>完结</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">科幻</span>
+                            <span class="tag">AI</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="card">
+                    <div class="card-poster">
+                        <img src="https://picsum.photos/seed/drama4/300/450.jpg" alt="怪奇物语海报">
+                        <div class="card-rating">9.4</div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">怪奇物语</h3>
+                        <div class="card-meta">
+                            <span>4季</span>
+                            <span>连载中</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">冒险</span>
+                            <span class="tag">80年代</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 5 -->
+                <article class="card">
+                    <div class="card-poster">
+                        <img src="https://picsum.photos/seed/drama5/300/450.jpg" alt="黑暗物质海报">
+                        <div class="card-rating">9.1</div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">黑暗物质</h3>
+                        <div class="card-meta">
+                            <span>3季</span>
+                            <span>完结</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">奇幻</span>
+                            <span class="tag">冒险</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 6 -->
+                <article class="card">
+                    <div class="card-poster">
+                        <img src="https://picsum.photos/seed/drama6/300/450.jpg" alt="风骚律师海报">
+                        <div class="card-rating">9.6</div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">风骚律师</h3>
+                        <div class="card-meta">
+                            <span>6季</span>
+                            <span>完结</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">律政</span>
+                            <span class="tag">剧情</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Latest Updates List -->
+            <section class="list-section">
+                <h2 class="section-title">最新更新</h2>
+                
+                <div class="episode-row">
+                    <img src="https://picsum.photos/seed/ep1/160/90.jpg" alt="第1集封面" class="episode-poster">
+                    <div class="episode-info">
+                        <h3>龙之家族 S2E8 - 沸腾</h3>
+                        <div class="episode-meta">更新时间：2023-11-12 | 集数：10集全 | 1080P</div>
+                        <p style="font-size: 0.9rem; color: #aaa; margin-top: 5px;">坦格利安家族的血脉战争进入白热化阶段，黑党与绿党在王座之下展开了殊死搏斗。</p>
+                    </div>
+                    <div class="episode-actions">
+                        <a href="#" class="btn btn-primary btn-sm">播放</a>
+                        <a href="#" class="btn btn-secondary btn-sm">下载</a>
+                    </div>
+                </div>
+
+                <div class="episode-row">
+                    <img src="https://picsum.photos/seed/ep2/160/90.jpg" alt="第2集封面" class="episode-poster">
+                    <div class="episode-info">
+                        <h3>黑袍纠察队 S4E1 - 灵魂</h3>
+                        <div class="episode-meta">更新时间：2023-06-13 | 集数：8集全 | 1080P</div>
+                        <p style="font-size: 0.9rem; color: #aaa; margin-top: 5px;">超级英雄们试图掩盖真相，而暴徒们则在街头制造混乱，真相将无处遁形。</p>
+                    </div>
+                    <div class="episode-actions">
+                        <a href="#" class="btn btn-primary btn-sm">播放</a>
+                        <a href="#" class="btn btn-secondary btn-sm">下载</a>
+                    </div>
+                </div>
+
+                <div class="episode-row">
+                    <img src="https://picsum.photos/seed/ep3/160/90.jpg" alt="第3集封面" class="episode-poster">
+                    <div class="episode-info">
+                        <h3>熊家餐馆 S3E10 - 末日</h3>
+                        <div class="episode-meta">更新时间：2023-02-22 | 集数：10集全 | 4K</div>
+                        <p style="font-size: 0.9rem; color: #aaa; margin-top: 5px;">在经历了种种危机后，里奥·法西奥必须做出选择，决定餐馆的未来。</p>
+                    </div>
+                    <div class="episode-actions">
+                        <a href="#" class="btn btn-primary btn-sm">播放</a>
+                        <a href="#" class="btn btn-secondary btn-sm">下载</a>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于天天美剧网</h4>
+                    <p style="font-size: 0.85rem; color: #888;">天天美剧网是一个致力于分享优质影视资源的平台。我们提供最新的美剧、英剧在线观看服务，致力于为观众带来高清、流畅的观影体验。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">热门榜单</a></li>
+                        <li><a href="#">最新更新</a></li>
+                        <li><a href="#">美剧分类</a></li>
+                        <li><a href="#">观看帮助</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>友情链接</h4>
+                    <ul>
+                        <li><a href="#">豆瓣电影</a></li>
+                        <li><a href="#">IMDb</a></li>
+                        <li><a href="#">HBO官网</a></li>
+                        <li><a href="#">Netflix</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li><a href="#">意见反馈</a></li>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">免责声明</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 天天美剧网 版权所有. 本站资源仅供学习交流使用，请于下载后24小时内删除。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                          </html>
